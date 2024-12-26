@@ -1,0 +1,1 @@
+select o.ogrno,o.ograd,b.bolumad,n.vize from ogrenciler o ,notlar n, bolumler b where o.ogrno=n.ogrno and o.bolumkod=b.bolumno

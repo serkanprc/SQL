@@ -1,0 +1,47 @@
+--Select * from ogrenci
+--select ogr_no as ogrenci_numarasý,bolum,ogr_ad from ogrenci
+--select * from ogrenci where bolum='týp'
+--select * from ogrenci where ogr_ad='serkan' or ogr_soyad='oduncu'
+--select* from ogrenci where ogr_ad='serkan' and ogr_soyad='duran'
+--select*from ogrenci where cinsiyet='kadýn'
+--select*from ogrenci where cinsiyet='erkek'
+--select*from ogrenci where cinsiyet='erkek' and bolum='endüstri'
+--select*from ogrenci where dogum_tarihi>'2001-07-17'
+--select*from ogrenci where bolum in ('makine','bilgisayar','endüstri')
+--select*from ogrenci where ogr_no between 106 and 109
+--select*from ogrenci where ogr_no not between 106 and 115
+--select*from ogrenci order by vize
+--select*from ogrenci where bolum='endüstri' or cinsiyet='erkek' order by ogr_ad asc
+--select*from ogrenci order by ogr_soyad
+--select distinct ogr_ad from ogrenci 
+--select distinct bolum from ogrenci
+--select ogr_no,ogr_ad,ogr_soyad,final*0.6+vize*0.4 as ogrenci_ortalama from ogrenci order by ogrenci_ortalama
+--Select ogr_no, ders, (final*0.6+vize*0.4 ) as ortalama from ogrenci order by ortalama
+--select ders,ogr_ad,final*0.6+vize*0.4 as ortalama from ogrenci where ders='veri' order by ortalama asc
+--Select ogr_no, ders, (final*0.6+vize*0.4 ) as ortalama from ogrenci where ders='anatomi' or bolum='endüstri' order by ortalama asc
+--Select sum(vize) from ogrenci where ogr_no>110
+--select AVG(final) from ogrenci where cinsiyet='erkek'
+--select max(vize) as maks_vize from ogrenci where cinsiyet='kadýn'
+--Select count(*) from ogrenci where cinsiyet='kadýn'
+--select COUNT(ogr_no) from ogrenci where vize>80 and final>65
+--select COUNT(distinct ogr_ad)from ogrenci
+--Select distinct ogr_ad,year(dogum_tarihi) from ogrenci
+--select distinct ogr_ad,DATENAME(mm,dogum_tarihi) from ogrenci
+--select count(distinct ogr_ad) from ogrenci where DATENAME(mm,dogum_tarihi)='july'
+--select min(dogum_tarihi) from ogrenci
+--Select distinct ogr_ad, dogum_tarihi,DATEDIFF(year,dogum_tarihi,GETDATE()) from ogrenci
+--select ogr_ad,year(dogum_tarihi) from ogrenci where year(dogum_tarihi)<2000
+--Select ogr_ad,right(ogr_ad,3) from ogrenci
+--select REPLACE(ogr_ad,'a','**') from ogrenci
+--select REPLACE(ogr_ad,right(ogr_ad,3),'***') from ogrenci
+--select CONCAT(ogr_ad,'*',ogr_soyad)from ogrenci
+----select CONCAT(ogr_ad,' isimli ogrenci vizeden ',vize,' notunu,finalden ise',final,' notunu almýþtýr.Bu da genel ortalamasý: ',final*0.6+vize*0.4) from ogrenci
+--Select ogr_ad,len(ogr_ad) from ogrenci
+--select ogr_ad,REVERSE(ogr_ad) from ogrenci
+--select ders,COUNT(*) from ogrenci group by ders
+--Select bolum, count(*) from ogrenci group by bolum
+--Select bolum, cinsiyet, count(*) from ogrenci group by bolum, cinsiyet
+--Select year(dogum_tarihi),count(*) from ogrenci group by year(dogum_tarihi)
+--Select ders, avg(vize) from ogrenci group by ders
+--select bolum,COUNT(*) from ogrenci where cinsiyet='kadýn' group by bolum having COUNT(*)>2
+--select dogum_tarihi ,count(*) from ogrenci where dogum_tarihi>'1998-01-01' and cinsiyet='erkek' group by dogum_tarihi
